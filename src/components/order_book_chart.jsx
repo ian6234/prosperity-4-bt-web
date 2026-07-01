@@ -1,5 +1,5 @@
 import { createChart, createSeriesMarkers, LineSeries, LineStyle } from 'lightweight-charts'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 const OrderBookChart = ({ priceHistory, marketTrades, ownTrades, onCrosshairMove }) => {
     const chartRef     = useRef()
@@ -73,7 +73,7 @@ const OrderBookChart = ({ priceHistory, marketTrades, ownTrades, onCrosshairMove
                 color:    '#1a69ff',   // grey — not your trades
                 shape:    'circle',
                 size:     1,
-                text:     `M ${t.quantity}@${t.price}`
+                text:     `M ${t.quantity}@${t.price}@${t.traders}`
             })),
             // ── YOUR TRADE MARKERS ──────────────────────────────────
             // Larger, coloured — your fills
